@@ -1,0 +1,50 @@
+ 
+
+DROP TABLE IF EXISTS `phonebook`;
+
+CREATE TABLE `phonebook` (
+  `id` int(11) NOT NULL auto_increment,
+  `fname` varchar(50) default NULL,
+  `lname` varchar(50) default NULL,
+  `phone` varchar(50) default NULL,
+  `email` varchar(100) default NULL,
+  `location` varchar(15) default NULL,
+  `mc` varchar(15) default NULL,
+  `pos` varchar(15) default NULL,
+  `dept` varchar(15) default NULL,
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM;
+
+/*Data for the table `phonebook` */
+
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (1,'Stephanie','AlOtaiba','644-0717','alotaiba@blr.makeu.edu','2205-J STB','4459','FAC','STE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (2,'Les','Aspinwall','644-8427','laspinwall@fsu.edu','G136 STB','4459','FAC','STE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (3,'Debra','Austin','644-3581','austin@blr.makeu.edu','1210-D STB','4453','FAC','ELPS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (4,'Cynthia','Bailey','644-0577','bailey@blr.makeu.edu','1002 Tully','4280','STF','SMRMPE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (5,'Shannon','Barksdale','644-4854','barksdal@blr.makeu.edu','1114 STB','4450','STF','DEAN');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (6,'Amy','Baylor','(703) 292-8491','baylor@blr.makeu.edu','Wash DC','4453','FAC','EPLS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (7,'Betsy','Becker','645-2371','bjbecker@blr.makeu.edu','3204-F STB','4453','FAC','EPLS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (8,'Joseph','Beckham','644-5553','jbeckham@blr.makeu.edu','1210-K STB','4452','FAC','ELPS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (9,'Cheryl','Beeler','644-4813','beeler@blr.makeu.edu','1002 Tully','4280','FAC','SMRMPE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (10,'Kerry','Behnke','645-8382','behnke@blr.makeu.edu','1107 STB','4450','STF','DEAN');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (11,'Marsha','Best','644-4005','mbest@admin.fsu.edu','1211-F STB','4450','STF','DEAN/RES');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (12,'Erika','Bettilyon','644-7197','ebettilyon@admin.fsu.edu','1002 Tully','4280','STF','SMRMPE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (13,'Robert','Birken','644-5825','birken@blr.makeu.edu','2301 STB','4460','STF','DEAN/OASIS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (14,'Eileen','Bischof','644-8407','epace@fsu.edu','2205-D STB','4459','FAC','STE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (15,'Annie','Biske','644-8810','abiske@blr.makeu.edu','2301-P STB','4460','STF','DEAN/OASIS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (16,'Rhonda','Blackwell-Flanagan','644-8166','flanagan@blr.makeu.edu','1209-D STB','4452','FAC','ELPS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (17,'Carol','Blankenhorn','(561) 746-0902','blankenh@blr.makeu.edu','Jupiter','4460','FAC','DEAN/OASIS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (18,'Natasha','Blankenship','644-6777','blanken@blr.makeu.edu','1209 STB','4452','STF','ELPS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (19,'Timolin','Bodison-Baker','644-8485','tbodisonbaker@fsu.edu','2204-G STB','4459','STF','STE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (20,'Michelle','Brimecombe','644-3953','mjp06d@fsu.edu','1002 Tully','4280','STF','SMRMPE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (21,'Leigh','Brown','645-8316','lbrown@blr.makeu.edu','2204-L STB','4459','STF','STE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (22,'Vernita','Brown','644-1645','vbrown@fsu.edu','1211-G STB','4450','STF','DEAN/RES');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (23,'Cindy','Campbell','(813) 910-9419','abic@msn.com','Tampa','4460','FAC','DEAN/OASIS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (24,'Angel','Canto','644-9440','acanto@fsu.edu','3206-J STB','4453','FAC','EPLS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (25,'Pamela \"Sissi\"','Carroll','644-0372','pcarroll@fsu.edu','1102 STB','4450','FAC','DEAN');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (26,'Pei-Hua','Chen','N/A','chen@blr.makeu.edu','N/A','4453','FAC','EPLS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (27,'Kathy','Clark','644-8497','kclark@fsu.edu','G135 STB','4459','FAC','STE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (28,'Robert','Clark','644-0370','rclark@fsu.edu','G129 STB','4459','FAC','STE');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (29,'Lora','Cohen-Vogel','644-8164','cohenvog@blr.makeu.edu','1209-E STB','4452','FAC','ELPS');
+insert  into `phonebook`(`id`,`fname`,`lname`,`phone`,`email`,`location`,`mc`,`pos`,`dept`) values (30,'Kelly','Conner','644-9185','kconner@blr.makeu.edu','1116 STB','4450','STF','DEAN');
+ 

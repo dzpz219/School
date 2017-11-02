@@ -1,0 +1,35 @@
+﻿body
+{
+	font-family: Sans-Serif;
+}
+.addressLabel
+{
+	float:left;
+	width:100px;
+	padding:5px;
+	text-align:right;
+}
+.addressField
+{
+	float:left;
+	padding:5px;
+}
+.clear
+{
+	clear:both;
+}
+.quote
+{
+    width:200px;
+    padding:20px;
+    border:Dotted 2px orange;
+    background-color:#eeeeee;
+    font:16px Georgia,Serif;
+}
+.floater
+{
+	float:left;
+	border:solid 1px black;
+	padding:5px;
+	margin:5px;
+}

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Lab4 Stock Web Service</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+    </h:head>
+    <h:body>
+        <div class="container">
+        <h1>Stock Quotes Now</h1>
+        <h:form>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="input-group">
+                        <h:inputText value="#{stockBean.symbol}" styleClass="form-control" p:placeholder="Symbol"/>
+                        <span class="input-group-btn">
+                        <h:commandButton action="#{stockBean.currentQuote}" value="Add" styleClass="btn btn-default"/>
+                        </span>
+                    </div>
+                    <br/>
+                    <div class="btn-group">
+                        <h:commandButton action="#{stockBean.deleteAllQuote()}" value="Clear All" styleClass="btn btn-default"/>
+                        <h:commandButton action="#{stockBean.toggleDebug()}" value="Toggle Debug" styleClass="btn btn-default"/>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <h:dataTable value="#{stockBean.stockList}" var="s" styleClass="table table-bordered">
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{s.name}" style="color: #{s.colour}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Symbol</f:facet>
+                        <h:outputText value="#{s.symbol}" style="color: #{s.colour}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Price</f:facet>
+                        <h:outputText value="#{s.last}" style="color: #{s.colour}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" >Change</f:facet>
+                        <h:outputText value="#{s.change}" style="color: #{s.colour}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" >Percentage Change</f:facet>
+                        <h:outputText value="#{s.percentChange}" style="color: #{s.colour}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" >Delete</f:facet>
+                        <h:commandButton action="#{stockBean.deleteQuote(s)}" value="Delete"/>
+                    </h:column>
+                    </h:dataTable>
+                    <h:outputText value="Last Updated: #{stockBean.currentDate}"/>
+                </div>
+            </div>
+            <br/>
+            <h:body rendered="#{stockBean.debug}">
+                <h:outputText value="Debug"/><br/>
+                <pre><h:outputText value="#{stockBean.quoteList}"/></pre>
+            </h:body>
+
+        </h:form>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script>
+
+$(document).ready(function(){
+	
+	$("form").submit(function(){
+		validation();
+		})
+	})
+
+function validation(){
+	var errorMsg = new Array();
+	
+	 formfirstname = $(":text[name = 'firstname']").val();
+	 formlastname = $(":text[name = 'lastname']").val();
+	 formpassword = $(":password[name = 'pwd']").val();
+	 
+	 formradio = $(":radio:checked").val();
+	 alert(formradio);
+	 
+	 if (formfirstname == ""){ $(":input[name = 'firstname']").css({background:"red"}) }
+	 else {errorMsg[0] = "" }
+	 
+	 if (formlastname == ""){ errorMsg[1] = "last name is empty" }
+	 else {errorMsg[1] = ""}
+	 
+	 	 
+	}
+</script>
+</head>
+
+<body>
+<form id = "theform">
+  First name:
+  <input type="text" name="firstname">
+  <br>
+  Last name:
+  <input type="text" name="lastname" style="background:red">
+  <br />
+  Password:
+  <input type="password" name="pwd">
+  <br />
+  <input type="radio" name="sex" value="male">
+  Male<br>
+  <input type="radio" name="sex" value="female">
+  Female<br />
+  <input type="checkbox" name="vehicle" value="Bike">
+  I have a bike<br>
+  <input type="checkbox" name="vehicle" value="Car">
+  I have a car <br />
+  <input type="submit" value="Submit">
+</form>
+<p></p>
+</body>
+</html>

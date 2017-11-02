@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <breakfast>
+    <cereal />
+    <eggs />
+    <fruit />
+  </breakfast>
+  <lunch>
+    <burgers />
+    <salad />
+    <tacos />
+  </lunch>
+  <dinner>
+    <salmon />
+    <spaghetti />
+    <steak />
+  </dinner>
+</menu>

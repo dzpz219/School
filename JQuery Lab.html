@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Comp10065 JavaScript Lab 4: jQuery</title>
+<style>
+/* Do not modify this CSS */
+
+
+
+h3 {
+	background-color: #EEE
+}
+h3 span {
+	font-size: 18pt;
+	background-color: black
+}
+table caption {
+	font-weight: bold
+}
+table tr.over {
+	background-color: red
+}
+.odd {
+	background-color: #EEE
+}
+.even {
+	background-color: #AAA
+}
+.highlight {
+	background-color: yellow
+}
+.faq {
+	width: 600px;
+	border: 1px solid #BBB;
+	padding: 5px
+}
+.faq div {
+	background-color: #EEE;
+	border: 1px solid #EEE;
+	margin-left: 15px;
+	padding: 0px
+}
+.faq div p {
+	padding: 0px;
+	margin: 0px
+}
+.faq h4.over {
+	color: #990000;
+	cursor: pointer;
+	text-decoration: underline
+}
+a#linkTitle {
+	text-decoration: none;
+	background-color: #006;
+	color: #CC9;
+}
+a[title]:hover:after {
+  content: attr(title);
+  padding: 4px 8px;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  white-space: nowrap;
+  z-index: 20px;
+}
+#tooltips {
+	width: 500px;
+	border: 1px solid #EEE
+}
+#tooltips span {
+	font-weight: bold;
+	color: #960;
+	font-style: italic
+}
+#easyTooltip {
+	padding: 5px;
+	border: 1px solid #ccc;
+	background: #f1f1f1;
+}
+</style>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="easyTooltip.js"></script>
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	  todaysdate();
+	  faqhideshow();
+	  $("span").easyTooltip();
+	  $("a:eq(4)").css({"title":"red"});
+	  $("#datepicker").datepicker();
+});
+	  
+	  
+function todaysdate(){
+	$('h3:first').html("Document was last modified on: " + randomcolour(document.lastModified));
+	$('h3:last').html("Today's date is:  " + randomcolour(currentdate()));	
+	
+		function randomcolour (inText){
+			output = "";
+			  for (var i=0; i<inText.length; i++){
+				oneLetter = inText.charAt(i);
+				
+				output += "<span style='color:rgb(" + 
+				Math.floor(Math.random() * (256 - 64) + 64) + "," + 
+				Math.floor(Math.random() * (256 - 64) + 64) + "," + 
+				Math.floor(Math.random() * (256 - 64) + 64) + ")'>" + oneLetter + "</span>";
+				}
+				return output ;
+			}
+			
+		function currentdate(){
+			 thedate = "";
+			 thetime = ""; 
+			 today = new Date();
+			 dd = today.getDate();
+			 mm = today.getMonth()+1;
+			 yyyy = today.getFullYear();
+			 hh = today.getHours();
+			 ms = today.getMinutes();
+			 ss = today.getSeconds();
+			 suffix = "AM";
+
+				if (dd<10) dd = '0' + dd
+				if (ms < 10) ms = "0" + ms
+				if (ss < 10) ss = "0" + ss
+				if (hh >= 12) {
+					suffix = "PM";
+					hh = hh - 12;
+					}
+				if (hh == 0) {hh = 12;}
+	switch (mm)
+	{
+	case 1:
+		month = "January";
+	break;
+	case 2:
+		month = "February";
+	break;
+	case 3:
+		month = "March";
+	break;
+	case 4:
+		month = "April";
+	break;
+	case 5:
+		month = "May";
+	break;
+	case 6:
+		month = "June";
+	break;
+	case 7:
+		month = "July";
+	break;
+	case 8:
+		month = "August";
+	break;
+	case 9:
+		month = "September";
+	break;
+	case 10:
+		month = "October";
+	break;
+	case 11:
+		month = "November";
+	break;
+	case 12:
+		month = "December";
+	break;
+}
+
+
+	
+thetime = hh +':'+ ms +':'+ ss + " " + suffix;		
+thedate = month + " " + dd + ", " + yyyy + " " + thetime;
+
+return thedate;
+}			
+setInterval(todaysdate, 1);
+}
+
+function faqhideshow(){
+		$(".faq > div").hide();
+		$("a:eq(2)").click(function(){
+			$(".faq > div").show();
+			})
+		$("a:eq(3)").click(function(){
+			$(".faq > div").hide();
+			})			
+		$("h4:eq(0)").click(function(){
+			$("div:eq(1)").toggle();
+			})
+		$("h4:eq(1)").click(function(){
+			$("div:eq(2)").toggle();
+			})
+		$("h4:eq(2)").click(function(){
+			$("div:eq(3)").toggle();
+			})
+		$("h4:eq(3)").click(function(){
+			$("div:eq(4)").toggle();
+			})
+	}
+
+</script>
+</head>
+
+<body>
+<h1>Comp10065 JavaScript Lab 4: jQuery</h1>
+
+<!--Do not modify the HTML below for parts 1-5-->
+<h2>1: Todays Date </h2>
+<h3>Document was last modified on: </h3>
+<h3>Todays date is : </h3>
+<h2>2: Zebra Striping Demo</h2>
+<table width="200" border="1">
+  <caption>
+  <a href="#">UP</a> Zebra Striping Demo <a href="#">DN</a>
+  </caption>
+  <tr>
+    <td>January</td>
+    <td>February</td>
+    <td>March</td>
+  </tr>
+  <tr>
+    <td>April</td>
+    <td>May</td>
+    <td>June</td>
+  </tr>
+  <tr>
+    <td>July</td>
+    <td>August</td>
+    <td>September</td>
+  </tr>
+  <tr>
+    <td>October</td>
+    <td>November</td>
+    <td>December</td>
+  </tr>
+  <tr>
+    <td>Monday</td>
+    <td>Tuesday</td>
+    <td>Wednesday</td>
+  </tr>
+  <tr>
+    <td>Thursday</td>
+    <td>Friday</td>
+    <td>Saturday</td>
+  </tr>
+  <tr>
+    <td>Spring</td>
+    <td>Summer</td>
+    <td>Fall</td>
+  </tr>
+</table>
+<h2>3: FAQ Hide/Show Demo</h2>
+<a href="#">Show All</a> | <a href="#">Hide All</a>
+<div class="faq">
+  <h4>1.How much does it cost? </h4>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+      sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna <strong>aliquam</strong> erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
+      exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+      commodo consequat. </p>
+  </div>
+  <h4>2.What is the meaning of life? </h4>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+      sed diam nonummy nibh euismod tincidunt<strong> ut laoreet dolore</strong> magna 
+      a<em>liquam erat volutpat. Ut wisi e</em>nim ad minim veniam, quis nostrud 
+      exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+      commodo consequat. </p>
+  </div>
+  <h4>3.Why is the sky blue?</h4>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+      sed diam nonummy nibh euismod tincidunt ut laoreet <strong>dolore magna 
+      aliquam</strong> erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
+      exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+      commodo consequat. </p>
+  </div>
+  <h4>4.Why is the real cost of money?</h4>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+      sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna 
+      aliquam erat volutpat. <strong>Ut wisi enim ad minim</strong> veniam, quis nostrud 
+      exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+      commodo consequat. </p>
+  </div>
+</div>
+<h2>4: Link and Title Attribute Demo</h2>
+<a href="#" id="linkTitle"
+ title="This is text from the title attribute, wrapped in a span tag, placed here by jquery."> Hover over this text</a>
+<h2>5: Tooltip Plugin</h2>
+<div id="tooltips">
+  <p> Lorem ipsum dolor sit amet, <span title="Here is some text">consectetuer</span> adipiscing elit, 
+    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam 
+    erat volutpat.</p>
+  <p> Ut wisi enim ad minim veniam, <span title="And even more text">quis</span> nostrud exerci 
+    tation <span title="And even more text......">ullamcorper</span> suscipit lobortis nisl ut aliquip
+    ex ea commodo consequat. </p>
+</div>
+<h2>6: Your Choice of a JQuery Plugin</h2>
+<p>Click to add Date: <input type="text" id="datepicker"></p>
+</body>
+</html>

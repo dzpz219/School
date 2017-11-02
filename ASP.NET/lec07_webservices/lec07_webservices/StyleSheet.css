@@ -1,0 +1,14 @@
+﻿body
+{
+	font-family: Sans-Serif;
+}
+td
+{
+	vertical-align: top;
+}
+th
+{
+	background-color: #644117;
+	font-weight: bold;
+	color: #ffd700;
+}

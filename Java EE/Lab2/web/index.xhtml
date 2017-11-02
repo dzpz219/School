@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lab 2 Mortgage Calculator</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+    </h:head>
+    <h:body styleClass="bg-warning">
+        <div class="container">
+            <h1 class="text-primary">MORTGAGE CALCULATOR</h1>
+            <h:form id="calculator">
+                <h:panelGrid id="panel" columns="3" styleClass="table table-bordered" border="0" columnClasses="bg-primary">
+                    <h:outputLabel value="ENTER INTEREST RATE:" />
+                    <h:inputText id="interestRate" value="#{mortgage.interestRate}" required="true" styleClass="form-control">
+                        <f:validateDoubleRange minimum="1.5" maximum="20.0" />
+                    </h:inputText>
+                    <h:message for="interestRate" style="color:red; text-transform: uppercase" />
+                    
+                    <h:outputLabel value="ENTER MORTGAGE AMOUNT:" />
+                    <h:inputText id="mortgageAmount" value="#{mortgage.amount}" required="true" styleClass="form-control"/>
+                    <h:message for="mortgageAmount" style="color:red; text-transform: uppercase" />
+                    
+                    <h:outputLabel value="ENTER AMORTIZATION PERIOD:" />
+                    <h:inputText id="amortizationPeriod" value="#{mortgage.amortizationPeriod}" required="true" styleClass="form-control"/>
+                    <h:message for="amortizationPeriod" style="color:red; text-transform: uppercase" />
+                </h:panelGrid>
+                <div class="btn-group">
+                    <h:commandButton value="Calculate" action="mortgagetable" styleClass="btn btn-default"/>
+                    <h:button value="Reset" outcome="index" styleClass="btn btn-default"/>
+                </div>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

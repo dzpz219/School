@@ -1,0 +1,211 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+	<h1 class="text-center">Metric</h1>
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label class="col-xs-2 control-label">Language:</label>
+				<div class="col-xs-2">
+					<select class="form-control">
+						<option value="Ruby">Ruby</option>
+						<option value="PHP">PHP</option>
+						<option value="C#">C#</option>
+						<option value="JavaScript">JavaScript</option>
+						<option value="Assembly">Assembly</option>
+						<option value="SQL">SQL</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<h4 class="col-xs-3 control-label">Parameters</h4>
+				<h4 class="col-xs-4 control-label">Weight Factors</h4>
+				<h4 class="col-xs-3 control-label">Results</h4>
+			</div>
+			<hr>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">User Inputs:</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="userInput">
+				</div>
+				<div class="col-xs-1 col-xs-offset-1">
+					<label class="radio-inline">
+						<input type="radio" name="userInputRadio" id="userInputRadio" value="1"> 1
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="userInputRadio" id="userInputRadio" value="2"> 2
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="userInputRadio" id="userInputRadio" value="3"> 3
+					</label>
+				</div>
+				
+				<label class="col-xs-1 control-label">=</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="userInputResult">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">User Outputs:</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="userOutput">
+				</div>
+				<div class="col-xs-1 col-xs-offset-1">
+					<label class="radio-inline">
+						<input type="radio" name="userOutputRadio" id="userOutputRadio" value="1"> 1
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="userOutputRadio" id="userOutputRadio" value="2"> 2
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="userOutputRadio" id="userOutputRadio" value="3"> 3
+					</label>
+				</div>
+				
+				<label class="col-xs-1 control-label">=</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="userOutputResult">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">User Inquiries:</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="userInquiries">
+				</div>
+				<div class="col-xs-1 col-xs-offset-1">
+					<label class="radio-inline">
+						<input type="radio" name="userInquiriesRadio" id="userInquiriesRadio" value="1"> 1
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="userInquiriesRadio" id="userInquiriesRadio" value="2"> 2
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="userInquiriesRadio" id="userInquiriesRadio" value="3"> 3
+					</label>
+				</div>
+				
+				<label class="col-xs-1 control-label">=</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="userInquiriesResult">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">Files:</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="files">
+				</div>
+				<div class="col-xs-1 col-xs-offset-1">
+					<label class="radio-inline">
+						<input type="radio" name="filesRadio" id="filesRadio" value="1"> 1
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="filesRadio" id="filesRadio" value="2"> 2
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="filesRadio" id="filesRadio" value="3"> 3
+					</label>
+				</div>
+				
+				<label class="col-xs-1 control-label">=</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="filesResult">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">External Interfaces:</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="external">
+				</div>
+				<div class="col-xs-1 col-xs-offset-1">
+					<label class="radio-inline">
+						<input type="radio" name="externalRadio" id="externalRadio" value="1"> 1
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="externalRadio" id="externalRadio" value="2"> 2
+					</label>
+				</div>
+				<div class="col-xs-1">
+					<label class="radio-inline">
+						<input type="radio" name="externalRadio" id="externalRadio" value="3"> 3
+					</label>
+				</div>
+				
+				<label class="col-xs-1 control-label">=</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="externalResult">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 col-xs-offset-7 control-label">Total Count</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="total">
+				</div>
+			</div>
+			<h4 class="text-center">Factors</h4><hr>
+			<div class="form-group">
+				<label class="col-xs-9">1. Does the system require reliable backup and recovery?</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="F1">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-9">2. Are data communications required?</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="F2">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-9">3. Are there distributed processing functions?</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="F3">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-9">4. Is performance critical?</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="F4">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-9">5. Will the system run in a existing, heavily utilized operational environment?</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="F5">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-9">6. Does the system require on-line data entry?</label>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="F6">
+				</div>
+			</div>
+		</div>
+		<div class="btn-group">
+			<button class="btn btn-default">Calculate</button>
+			<button class="btn btn-default">Reset</button>
+		</div>
+		<h4 class="text-center">Results</h4><hr>
+		<div>Your project has --- function points</div>
+		<br>
+	</div>
+</body>
+</html>

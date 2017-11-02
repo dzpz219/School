@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Lab3 Mileage Application</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+    </h:head>
+    <h:body>
+        <div class="container">
+        <h1>CAR MILEAGE APPLICATION</h1>
+        <h:form>
+            <h:dataTable value="#{carBean.cars}" var="c" styleClass="table table-bordered">
+            <h:column>
+                <f:facet name="header">MAKE</f:facet>
+                <h:outputText value="#{c.make}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">MODEL</f:facet>
+                <h:outputText value="#{c.model}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">YEAR</f:facet>
+                <h:outputText value="#{c.modelyear}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header" >DETAILS</f:facet>
+                <h:commandButton value="Details" styleClass="btn btn-default" action="#{carBean.setCarID(c)}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">DELETE</f:facet>
+                <h:commandButton value="Delete" action="#{carBean.deleteCar(c.id, c, true)}" styleClass="btn btn-default"/>
+            </h:column>
+        </h:dataTable>      
+            <h:commandButton value="Add New Car" styleClass="btn btn-default" action="newCar" />
+            <h:panelGroup rendered="#{carBean.flag != false}">
+                <h:outputText value=" REALLY DELETE #{carBean.year} #{carBean.make} #{carBean.model} ?" />
+                <div class="btn btn-group">
+                    <h:commandButton value="Yes" action="#{carBean.removeCar()}" styleClass="btn btn-default" />
+                    <h:commandButton value="No" action="#{carBean.setFlag(false)}" styleClass="btn btn-default" />
+                </div>
+            </h:panelGroup>
+        </h:form>
+        </div>
+    </h:body>
+</html>
+

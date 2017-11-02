@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lab3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_display_message">Deuxième activité</string>
+    <string name="action_settings">paramètres</string>
+    <string name="deviceMsg">Ce dispositif est actuellement détenu dans le </string>
+    <string name="devicePortrait">orientation portrait. </string>
+    <string name="deviceLandscape">orientation paysage. </string>
+    <string name="deviceBuildVersion">Ma version de construction est </string>
+    <string name="btnSecond">deuxième</string>
+    <string name="btnFirst">En Premier</string>
+    
+
+</resources>

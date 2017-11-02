@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Lab3 Mileage Application</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+    </h:head>
+    <h:body>
+        <div class="container">
+        <h1>ADD A NEW CAR</h1>
+        <h:form>
+            <h:panelGrid id="panel" columns="2" styleClass="table table-bordered">
+                <h:outputLabel value="MAKE:" />
+                <h:inputText id="make" value="#{carBean.make}" styleClass="form-control"/>
+
+                <h:outputLabel value="MODEL:" />
+                <h:inputText id="model" value="#{carBean.model}" styleClass="form-control"/>
+
+                <h:outputLabel value="MODEL YEAR:" />
+                <h:inputText id="year" value="#{carBean.year}" styleClass="form-control"/>
+            </h:panelGrid>
+            <div class="btn-group">
+                <h:commandButton value="Add to Database" action="#{carBean.addCar()}" styleClass="btn btn-default"/>
+                <h:commandButton value="Cancel" action="index" styleClass="btn btn-default"/>
+            </div>
+        </h:form>
+        
+        </div>
+    </h:body>
+</html>
+

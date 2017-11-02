@@ -1,0 +1,13 @@
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\bin\Debug\WpfApplication3.exe.config
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\bin\Debug\WpfApplication3.exe
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\bin\Debug\WpfApplication3.pdb
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.csprojResolveAssemblyReference.cache
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\MainWindow.baml
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\MainWindow.g.cs
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\App.g.cs
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.cache
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.g.resources
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.Properties.Resources.resources
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.csproj.GenerateResource.Cache
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.exe
+D:\School\ADV .NET\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.pdb

@@ -1,0 +1,5 @@
+D:\School\ADV .NET\test\test\bin\Debug\test.exe.config
+D:\School\ADV .NET\test\test\bin\Debug\test.exe
+D:\School\ADV .NET\test\test\bin\Debug\test.pdb
+D:\School\ADV .NET\test\test\obj\Debug\test.exe
+D:\School\ADV .NET\test\test\obj\Debug\test.pdb

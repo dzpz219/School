@@ -1,0 +1,34 @@
+<resources>
+
+    <string name="app_name">TestOneAnswer</string>
+    <string name="prompt">Enter a message</string>
+    <string name="writemessage">Tap to show message</string>
+    <string name="typehere">Say something</string>
+    <string name="lefty">This Serif text should appear over on the left side of the 
+        screen in green slightly larger than the black text on the right.</string>
+    <string name="righty">Mohawk College of Applied Arts and Technology, Mohawk College of Applied Arts and Technology, 
+        Mohawk College of Applied Arts and Technology, 
+        Mohawk College of Applied Arts and Technology, 
+        Mohawk College of Applied Arts and Technology, 
+        Mohawk College of Applied Arts and Technology, 
+        Mohawk College of Applied Arts and Technology, 
+        Mohawk College of Applied Arts and Technology, </string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Test One</string>
+    
+    <string-array name="monthlist">
+        		<item>January</item>
+        		<item>February</item>
+        		<item>March</item>
+        		<item>April</item>
+        		<item>May</item>
+        		<item>June</item>
+        		<item>July</item>
+        		<item>August</item>
+        		<item>September</item>
+        		<item>October</item>
+        		<item>November</item>
+        		<item>December</item>
+   		 </string-array>
+	<string name="title_activity_display_message">My Message</string>
+</resources>

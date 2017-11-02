@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  
+  <siteMapNode url="~/navigation.aspx" title="Home" description="The home page of the navigation controls">
+
+    <!-- Product Nodes -->
+    <siteMapNode title="Products" description="Website products">
+      <siteMapNode url="~/Products/FirstProduct.aspx" title="First Product" description="The first product">
+        <siteMapNode url="~/Products/FirstProductDetail.aspx" title="First Product Detail" description="The first product detail" />
+      </siteMapNode>
+      <siteMapNode url="~/Products/SecondProduct.aspx" title="Second Product" description="The second product" />
+    </siteMapNode>
+
+    <!-- Service Nodes -->
+    <siteMapNode title="Services" description="Website services">
+      <siteMapNode url="~/Services/FirstService.aspx" title="First Service" description="The first service" />
+      <siteMapNode url="~/Services/SecondService.aspx" title="Second Service" description="The second service" />
+    </siteMapNode>
+
+  </siteMapNode>
+  
+</siteMap>

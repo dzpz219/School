@@ -1,0 +1,9 @@
+D:\School\ADV .NET\Lab05\Lab05\bin\Debug\Lab05.exe.config
+D:\School\ADV .NET\Lab05\Lab05\bin\Debug\Lab05.exe
+D:\School\ADV .NET\Lab05\Lab05\bin\Debug\Lab05.pdb
+D:\School\ADV .NET\Lab05\Lab05\obj\Debug\Lab5.csprojResolveAssemblyReference.cache
+D:\School\ADV .NET\Lab05\Lab05\obj\Debug\Lab05.Form1.resources
+D:\School\ADV .NET\Lab05\Lab05\obj\Debug\Lab05.Properties.Resources.resources
+D:\School\ADV .NET\Lab05\Lab05\obj\Debug\Lab5.csproj.GenerateResource.Cache
+D:\School\ADV .NET\Lab05\Lab05\obj\Debug\Lab05.exe
+D:\School\ADV .NET\Lab05\Lab05\obj\Debug\Lab05.pdb

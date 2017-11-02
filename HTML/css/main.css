@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand{
+	color: white;
+}
+
+#map{
+	width: 1000px;
+	height: 500px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,5 @@
+D:\School\ADV .NET\Lab1\Lab1\bin\Release\Lab1.exe.config
+D:\School\ADV .NET\Lab1\Lab1\bin\Release\Lab1.exe
+D:\School\ADV .NET\Lab1\Lab1\bin\Release\Lab1.pdb
+D:\School\ADV .NET\Lab1\Lab1\obj\Release\Lab1.exe
+D:\School\ADV .NET\Lab1\Lab1\obj\Release\Lab1.pdb

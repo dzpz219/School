@@ -1,0 +1,9 @@
+USE CHDB
+
+-- Create Users table
+CREATE TABLE Users ( 
+	UserName VARCHAR(50) NOT NULL ,
+	Email VARCHAR(50) NOT NULL , 
+	Salt VARBINARY(64) NOT NULL , 
+	HashValue VARBINARY(64) NOT NULL , 
+	CONSTRAINT PK_Users PRIMARY KEY ( UserName ) ) ;

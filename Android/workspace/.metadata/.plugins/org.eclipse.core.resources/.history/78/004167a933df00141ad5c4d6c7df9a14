@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lab6A</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btnString">Fade</string>
+    <string name="title_activity_card_flip">CardFlipActivity</string>
+    <string name="penguinText">These are penguins.</string>
+    <string name="itemTitle">Tap to flip]</string>
+
+</resources>

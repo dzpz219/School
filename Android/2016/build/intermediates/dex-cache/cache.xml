@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\School\Android\2016\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="E:\School\Android\2016\Application\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-d47d832570cf06a7147d407bc2c8f1ff9a7871a3.jar" />
+    </item>
+    <item
+        jar="E:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="E:\School\Android\2016\Application\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-55686660cfda5dd96b01ac631f2fbb75df70a290.jar" />
+    </item>
+    <item
+        jar="E:\School\Android\2016\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="E:\School\Android\2016\Application\build\intermediates\pre-dexed\debug\classes-401c46a75b1ebec84100650e26458e457b77bd3b.jar" />
+    </item>
+    <item
+        jar="E:\School\Android\2016\Application\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1a57337a520bf40b9ad1e074cb780527dffa1aac">
+        <dex dex="E:\School\Android\2016\Application\build\intermediates\pre-dexed\debug\classes-00609beba66adc4001b4d611c1f24fac5c977d4a.jar" />
+    </item>
+    <item
+        jar="E:\School\Android\2016\Application\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="076c7d9e22cc325b8008ff799e0c06dfb8eefdf3">
+        <dex dex="E:\School\Android\2016\Application\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-c60f33a194a4b3aaeb9ca0b12f0b34d8001d19f4.jar" />
+    </item>
+    <item
+        jar="E:\School\Android\2016\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
+        <dex dex="E:\School\Android\2016\Application\build\intermediates\pre-dexed\debug\classes-669089bf1873aea20fb691961e186b5a49d73d85.jar" />
+    </item>
+
+</items>

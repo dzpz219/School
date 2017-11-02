@@ -1,0 +1,125 @@
+-- ch22_1a.sql
+CREATE OR REPLACE PROCEDURE LOG_USER_COUNT 
+   (PI_DIRECTORY  IN VARCHAR2,
+    PI_FILE_NAME  IN VARCHAR2)
+AS
+   V_File_handle  UTL_FILE.FILE_TYPE; 
+   V_user_count   number;
+BEGIN
+   SELECT count(*)
+   INTO   V_user_count   
+   FROM   v$session 
+   WHERE  username is not null;
+
+   V_File_handle  :=
+      UTL_FILE.FOPEN(PI_DIRECTORY, PI_FILE_NAME, 'A');
+   UTL_FILE.NEW_LINE(V_File_handle);    
+   UTL_FILE.PUT_LINE(V_File_handle  , '---- User log -----');  
+   UTL_FILE.NEW_LINE(V_File_handle);    
+   UTL_FILE.PUT_LINE(V_File_handle  , 'on '||
+         TO_CHAR(SYSDATE, 'MM/DD/YY HH24:MI')); 
+   UTL_FILE.PUT_LINE(V_File_handle  , 
+         'Number of users logged on: '|| V_user_count);
+   UTL_FILE.PUT_LINE(V_File_handle  , '---- End log -----');
+   UTL_FILE.NEW_LINE(V_File_handle);    
+   UTL_FILE.FCLOSE(V_File_handle); 
+
+EXCEPTION  
+   WHEN UTL_FILE.INVALID_FILENAME THEN
+      DBMS_OUTPUT.PUT_LINE('File is invalid');
+   WHEN UTL_FILE.WRITE_ERROR THEN
+       DBMS_OUTPUT.PUT_LINE('Oracle is not able to write to file');
+END;
+/
+
+
+
+
+-- ch22_2a.sql
+create table PLAN_TABLE (
+        statement_id       varchar2(30),
+        timestamp          date,
+        remarks            varchar2(80),
+        operation          varchar2(30),
+        options            varchar2(255),
+        object_node        varchar2(128),
+        object_owner       varchar2(30),
+        object_name        varchar2(30),
+        object_instance    numeric,
+        object_type        varchar2(30),
+        optimizer          varchar2(255),
+        search_columns     number,
+        id                 numeric,
+        parent_id          numeric,
+        position           numeric,
+        cost               numeric,
+        cardinality        numeric,
+        bytes              numeric,
+        other_tag          varchar2(255),
+        partition_start    varchar2(255),
+        partition_stop     varchar2(255),
+        partition_id       numeric,
+        other              long,
+        distribution       varchar2(30),
+        cpu_cost           numeric,
+        io_cost            numeric,
+        temp_space         numeric,
+        access_predicates  varchar2(4000),
+        filter_predicates  varchar2(4000),
+        projection         varchar2(4000),
+        time               numeric);
+        
+
+
+
+-- ch22_2b.sql
+select rtrim ( lpad  ( ' ', 2*level )  ||
+                rtrim ( operation )     || ' ' ||
+                rtrim ( options )       || ' ' ||
+                object_name             || ' ' ||
+                partition_start         || ' ' ||
+                partition_stop          || ' ' ||
+                to_char ( partition_id )
+              ) the_query_plan
+   from plan_table
+   connect by prior id = parent_id
+   start with id = 0;
+   
+   
+-- ch22_2c.sql
+EXPLAIN PLAN FOR 
+  SELECT c.course_no    course_no,
+         c.description  description,
+         b.section_no   section_no,
+         s.section_id   section_id,
+         i.first_name   first_name,
+         i.last_name    last_name
+  FROM   course     c,
+         instructor i,
+         section    s,
+        (SELECT
+               a.course_no       course_no,
+               MIN(a.section_no) section_no
+         FROM (SELECT  count(*)        enrolled,
+                       se.CAPACITY     capacity,
+                       se.course_no    course_no,
+                       se.section_no   section_no,
+                       e.section_id    section_id
+                  FROM section se,
+                       enrollment e
+                 WHERE se.section_id = e.section_id
+                   AND e.student_id <> 214
+              GROUP BY
+                       se.CAPACITY,
+                       se.course_no,
+                       e.section_id,
+                       se.section_no
+                HAVING count(*) < se.CAPACITY) a
+        GROUP BY
+                a.course_no) b
+  WHERE c.course_no     = b.course_no
+  AND   b.course_no     = s.course_no
+  AND   s.section_no    = b.section_no
+  AND   s.instructor_id = i.instructor_id;
+
+   

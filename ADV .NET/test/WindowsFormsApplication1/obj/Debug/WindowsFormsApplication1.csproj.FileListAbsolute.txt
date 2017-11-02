@@ -1,0 +1,9 @@
+D:\School\ADV .NET\test\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\School\ADV .NET\test\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\School\ADV .NET\test\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\School\ADV .NET\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+D:\School\ADV .NET\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+D:\School\ADV .NET\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\School\ADV .NET\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\School\ADV .NET\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\School\ADV .NET\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

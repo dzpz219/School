@@ -1,0 +1,2 @@
+D:\School\ADV .NET\Lab3\Lab3\bin\Debug\Lab3.exe.config
+D:\School\ADV .NET\Lab3\Lab3\obj\Debug\Lab3.csprojResolveAssemblyReference.cache

@@ -1,0 +1,12 @@
+D:\School\ADV .NET\Lab4\Lab4\bin\Debug\Lab4.exe.config
+D:\School\ADV .NET\Lab4\Lab4\bin\Debug\Lab4.exe
+D:\School\ADV .NET\Lab4\Lab4\bin\Debug\Lab4.pdb
+D:\School\ADV .NET\Lab4\Lab4\obj\Debug\Lab4.csprojResolveAssemblyReference.cache
+D:\School\ADV .NET\Lab4\Lab4\obj\Debug\Lab4.exe
+D:\School\ADV .NET\Lab4\Lab4\obj\Debug\Lab4.pdb
+C:\Users\Danny\Desktop\ZhangChaoCZ (1)\Lab4\Lab4\bin\Debug\Lab4.exe.config
+C:\Users\Danny\Desktop\ZhangChaoCZ (1)\Lab4\Lab4\obj\Debug\Lab4.exe
+C:\Users\Danny\Desktop\ZhangChaoCZ (1)\Lab4\Lab4\obj\Debug\Lab4.pdb
+C:\Users\Danny\Desktop\ZhangChaoCZ (1)\Lab4\Lab4\bin\Debug\Lab4.exe
+C:\Users\Danny\Desktop\ZhangChaoCZ (1)\Lab4\Lab4\bin\Debug\Lab4.pdb
+C:\Users\Danny\Desktop\ZhangChaoCZ (1)\Lab4\Lab4\obj\Debug\Lab4.csprojResolveAssemblyReference.cache

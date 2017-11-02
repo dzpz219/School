@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Mortgage Table</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+    </h:head>
+    <h:body styleClass="bg-warning">
+        <div class="container">
+        <h1 class="text-primary">MORTGAGE TABLE RESULTS</h1>
+        <h2 class="text-primary">MORTGAGE DETAILS <h:button value="Try Another" outcome="index" styleClass="btn btn-default"/></h2>
+        
+        <h:panelGrid id="details" columns="2" styleClass="table table-bordered text-center" columnClasses="bg-primary">
+            <h:outputLabel value="AMOUNT" />
+            <h:outputText value="#{mortgage.amount}">
+                <f:convertNumber pattern="$#,###.00" />
+            </h:outputText>
+            
+            <h:outputLabel value="ANNUAL PERCENTAGE RATE" />
+            <h:outputText value="#{mortgage.interestRate}">
+                <f:convertNumber pattern="#.00"/>
+            </h:outputText>
+            
+            <h:outputLabel value="EFFECTIVE ANNUAL INTEREST RATE" />
+            <h:outputText value="#{mortgage.effectiveAnnualRate}">
+                <f:convertNumber pattern="#.00"/>
+            </h:outputText>
+            
+            <h:outputLabel value="PERIOD (CALCULATED SEMI-ANNUALLY) MONTHLY INTEREST RATE" />
+            <h:outputText value="#{mortgage.calculatedMonthlyRate}">
+                <f:convertNumber pattern="#0.0000"/>
+            </h:outputText>
+            
+            <h:outputLabel value="AMORTIZATION PERIOD" />
+            <h:outputText value="#{mortgage.amortizationPeriod}">
+                <f:convertNumber pattern="# YEARS"/>
+            </h:outputText>
+            <h:outputLabel value="TOTAL INTEREST" />
+            <h:outputText value="#{mortgage.totalInterest}">
+                <f:convertNumber pattern="$#,###.00" />
+            </h:outputText>
+            
+            <h:outputLabel value="TOTAL PAYMENTS" />
+            <h:outputText value="#{mortgage.totalAmount}">
+                <f:convertNumber pattern="$#,###.00" />
+            </h:outputText>
+        </h:panelGrid>
+        
+        
+        <h:dataTable value="#{mortgage.payments}" var="p" styleClass="table table-bordered table-striped text-center" headerClass="bg-primary text-center">
+            <h:column>
+                <f:facet name="header">DATE</f:facet>
+                <h:outputText value="#{p.date}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header" >PAYMENT</f:facet> 
+                <h:outputText value="#{p.payment}">
+                    <f:convertNumber pattern="$#,###.00"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header" >INTEREST</f:facet> 
+                <h:outputText value="#{p.interest}">
+                    <f:convertNumber pattern="$#.00"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header" >PRINCIPAL</f:facet> 
+                <h:outputText value="#{p.principle}">
+                    <f:convertNumber pattern="$#,###.00"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header" >BALANCE</f:facet> 
+                <h:outputText value="#{p.balance}">
+                    <f:convertNumber pattern="$#,###.00"/>
+                </h:outputText>
+            </h:column>
+        </h:dataTable>
+        </div>
+    </h:body>
+</html>
+

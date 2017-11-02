@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/semester_one"
+            android:title="Semester One" />
+        <item
+            android:id="@+id/semester_two"
+            android:title="Semester Two" />
+        <item
+            android:id="@+id/semester_three"
+            android:title="Semester Three" />
+        <item
+            android:id="@+id/semester_four"
+            android:title="Semester Four" />
+    </group>
+</menu>

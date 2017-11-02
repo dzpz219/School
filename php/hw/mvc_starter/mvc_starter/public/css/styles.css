@@ -1,0 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
+body {font-family: 'Patrick Hand SC', cursive;}
+h1 { color:#009 ; text-align:center; letter-spacing: .1em; text-shadow: 2px 2px #ccc;}
+p#latin {  border: 1px solid black; padding: 10px; border-radius: 15px; background-color:white}
+
+ol#nav {list-style:none; border-bottom: 1px solid black;padding: 5px}
+ol#nav li {display: inline ; background-color: #009; width: 35px;  border-radius: 5px 0px }
+ol#nav li a {color:white; padding: 0px 10px; text-decoration:none; letter-spacing: .2em;}
+ol#nav li a:hover {color:red}
+
+div#main {width: 800px; margin: auto; border: 1px solid black;
+		border-radius: 15px; box-shadow: 5px 5px 1px #888; padding: 20px; background-color:#EEE}
+  

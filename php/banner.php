@@ -1,0 +1,21 @@
+<?
+if ($_GET['customer'] == '10001')
+{
+  header("Content-type: image/jpg");
+  header("Content-length: 432");
+  echo base64_decode(
+'iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwklEQVQY042RMWoCYRgF5/vXn61MXDCFRdQyB1BsbMRTCB4mh7Czs8qRUgYinsCFhWV30qVILHbqx3swD7vOvrdpPJ1d76wWVgvXO09nm8a+t+tQvd7c7CWMUsYyNkoJN3uvNxXvtautYJ5aVMbEmFhU5qngauu9Lt5TyceF/ELb8ovQdeQnrp+kMly+8fVNZB5iy/I1TM/0ARLxLyEEycQAEvMZtA9qgAhomc8SxwPUjDL6d2uUoeZ4GKRgoMwBt/wAuJqgQQVjQ4sAAAAmelRYdENvbW1lbnQAAHjacy5KTSxJTVEozyzJUAjJSFVw9/QNAABS5wcjkMtlcAAAAABJRU5ErkJggg==');
+}
+else if ($_GET['customer'] == '10002')
+{
+  header("Content-type: image/jpg");
+  header("Content-length: 412");
+  echo base64_decode( 'R0lGODlhCgAKANUlABNIWxA/UDBleYyptV+GlVh4hFRtdk9ocZOpshNMYdbg4zlgb4aVmmKNngg3SGyaqjx2jDx5kRpsiS5gc5CiqlV1gRaLtomaoFFrdStTYxWBqipOWxA3RhBpiRN3nA9eexJwkxVkggtFW7O5uw5Ubv///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAACUALAAAAAAKAAoAAAZQwFJpZNhkCiNhiRFYAESiBGXIqSgGpCxpdHAIBo9QJ/QhbDgiUgjk8XQgZ9Gn47FoQBEMWu3R3BsjAWlzICASSRdPJB8hIQhKIwUTAgRJJUEAOw==');
+}
+else if ($_GET['customer'] == '10003')
+{
+  header("Content-type: image/gif");
+  header("Content-length: 176");  
+  echo base64_decode('R0lGODlhCgALAOMAAMbGxmbMZgDMMwDMADPMMzPMZszMmZnMmQBmAACZAAAzADOZMwAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAKAAsAQAQvEMggxJAYJIQUwkJRWMOwAUVgHOQFlLCpLFmNESkBS8JxjLBPLKiQJEqJhMdWiwAAOw');
+}
+?>

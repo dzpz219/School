@@ -1,0 +1,21 @@
+﻿body {
+    font-family: Sans-Serif;
+}
+.leftColumn {
+	float: left;
+	padding: 5px;
+	width: 20%;
+}
+.middleColumn {
+	float: left;
+	padding: 5px;
+	width: 35%;
+}
+.rightColumn {
+    float:left;
+    padding:5px;
+    width:35%;
+}
+.clear {
+    clear:both;
+}

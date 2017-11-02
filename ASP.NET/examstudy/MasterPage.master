@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Master</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <nav class="navbar navbar-default" role="navigation">  
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                 <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
+                 <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Form.aspx">Form</asp:HyperLink></li>
+                 <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Language.aspx">Language</asp:HyperLink></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+D:\School\ADV .NET\Lab3\Lab3\bin\Release\Lab3.exe.config
+D:\School\ADV .NET\Lab3\Lab3\bin\Release\Lab3.exe
+D:\School\ADV .NET\Lab3\Lab3\bin\Release\Lab3.pdb
+D:\School\ADV .NET\Lab3\Lab3\obj\Release\Lab3.exe
+D:\School\ADV .NET\Lab3\Lab3\obj\Release\Lab3.pdb
+D:\School\ADV .NET\Lab3\Lab3\obj\Release\Lab3.csprojResolveAssemblyReference.cache
+D:\Downloads\ZhangChaoCZ\Lab3\Lab3\bin\Release\Lab3.exe.config
+D:\Downloads\ZhangChaoCZ\Lab3\Lab3\obj\Release\Lab3.exe
+D:\Downloads\ZhangChaoCZ\Lab3\Lab3\obj\Release\Lab3.pdb
+D:\Downloads\ZhangChaoCZ\Lab3\Lab3\bin\Release\Lab3.exe
+D:\Downloads\ZhangChaoCZ\Lab3\Lab3\bin\Release\Lab3.pdb
+D:\Downloads\ZhangChaoCZ\Lab3\Lab3\obj\Release\Lab3.csprojResolveAssemblyReference.cache

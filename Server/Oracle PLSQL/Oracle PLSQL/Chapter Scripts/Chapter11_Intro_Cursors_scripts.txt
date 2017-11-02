@@ -1,0 +1,282 @@
+
+-- ch11_1a.sql
+SET SERVEROUTPUT ON
+DECLARE
+   vr_student student%ROWTYPE;
+BEGIN
+   SELECT *
+     INTO vr_student
+     FROM student
+    WHERE student_id = 156;
+   DBMS_OUTPUT.PUT_LINE (vr_student.first_name||' '
+      ||vr_student.last_name||' has an ID of 156');
+EXCEPTION
+   WHEN no_data_found
+      THEN
+           RAISE_APPLICATION_ERROR(-2001,'The Student '||
+            'is not in the database');
+END;
+/
+
+
+-- ch11_2a.sql
+SET SERVEROUTPUT ON
+DECLARE
+   CURSOR c_zip IS
+      SELECT *
+        FROM zipcode;
+   vr_zip c_zip%ROWTYPE;
+BEGIN
+   OPEN c_zip;
+   LOOP
+      FETCH c_zip INTO vr_zip;
+      EXIT WHEN c_zip%NOTFOUND;
+      DBMS_OUTPUT.PUT_LINE(vr_zip.zip||
+         '  '||vr_zip.city||' '||vr_zip.state);
+   END LOOP;
+END;
+/
+
+-- ch11_3a.sql
+SET SERVEROUTPUT ON
+DECLARE
+   v_city zipcode.city%type;
+BEGIN
+   SELECT city
+     INTO v_city
+     FROM zipcode
+    WHERE zip = 07002;
+   IF SQL%ROWCOUNT = 1
+   THEN
+     DBMS_OUTPUT.PUT_LINE(v_city ||' has a '||
+        'zipcode of 07002');
+   ELSIF SQL%ROWCOUNT = 0
+   THEN
+      DBMS_OUTPUT.PUT_LINE('The zipcode 07002 is '||
+         ' not in the database');
+   ELSE
+      DBMS_OUTPUT.PUT_LINE('Stop harassing me');
+   END IF;
+END;
+/
+
+-- ch11_4a.sql
+DECLARE
+   v_sid      student.student_id%TYPE;
+   CURSOR c_student IS
+      SELECT student_id
+        FROM student
+       WHERE student_id < 110;
+BEGIN
+   OPEN c_student;
+   LOOP
+      FETCH c_student INTO v_sid;
+      EXIT WHEN c_student%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('STUDENT ID : '||v_sid);
+   END LOOP;
+   CLOSE c_student;
+ EXCEPTION
+   WHEN OTHERS
+   THEN
+      IF c_student%ISOPEN
+      THEN
+         CLOSE c_student;
+      END IF;
+ END;
+ /
+      
+-- ch11_5a.sql
+SET SERVEROUTPUT ON
+DECLARE
+    v_sid      student.student_id%TYPE;
+    CURSOR c_student IS
+       SELECT student_id
+         FROM student
+        WHERE student_id < 110;
+ BEGIN
+    OPEN c_student;
+    LOOP
+      FETCH c_student INTO v_sid;
+      IF c_student%FOUND THEN
+      DBMS_OUTPUT.PUT_LINE
+        ('Just FETCHED row '   
+          ||TO_CHAR(c_student%ROWCOUNT)||
+          ' Student ID: '||v_sid);
+      ELSE 
+        EXIT;
+      END IF;
+   END LOOP;
+   CLOSE c_student;
+ EXCEPTION
+   WHEN OTHERS
+   THEN
+      IF c_student%ISOPEN
+      THEN
+         CLOSE c_student;
+      END IF;
+ END;
+/
+
+-- ch11_6a.sql
+SET SERVEROUTPUT ON
+DECLARE
+   CURSOR c_student_enroll IS
+      SELECT s.student_id, first_name, last_name,
+             COUNT(*) enroll,
+             (CASE  
+                  WHEN count(*) = 1 Then ' class.'
+                  WHEN count(*) is null then 
+                               ' no classes.'
+                  ELSE ' classes.'
+              END) class                     
+        FROM student s, enrollment e
+       WHERE s.student_id = e.student_id
+         AND s.student_id <110
+       GROUP BY s.student_id, first_name, last_name;
+   r_student_enroll    c_student_enroll%ROWTYPE;
+BEGIN
+   OPEN c_student_enroll;
+   LOOP
+      FETCH c_student_enroll INTO r_student_enroll;
+      EXIT WHEN c_student_enroll%NOTFOUND;
+      DBMS_OUTPUT.PUT_LINE('Student INFO: ID '||
+         r_student_enroll.student_id||' is '||
+         r_student_enroll.first_name|| ' ' ||
+         r_student_enroll.last_name||
+         ' is enrolled in '||r_student_enroll.enroll||
+         r_student_enroll.class);
+   END LOOP;
+   CLOSE c_student_enroll;
+EXCEPTION
+   WHEN OTHERS
+   THEN
+    IF c_student_enroll %ISOPEN
+      THEN
+    CLOSE c_student_enroll;
+    END IF;
+END;
+/
+
+-- ch11_7a.sql
+DECLARE
+   CURSOR c_group_discount IS
+      SELECT DISTINCT s.course_no 
+        FROM section s, enrollment e
+       WHERE s.section_id = e.section_id
+        GROUP BY s.course_no, e.section_id, s.section_id
+       HAVING COUNT(*)>=8;
+BEGIN
+   FOR r_group_discount IN c_group_discount   LOOP
+      UPDATE course
+         SET cost = cost * .95
+       WHERE course_no = r_group_discount.course_no;
+   END LOOP;
+   COMMIT;
+END;
+/
+
+
+-- ch11_8a.sql
+  DECLARE
+     v_zip zipcode.zip%TYPE;
+     v_student_flag CHAR;
+     CURSOR c_zip IS
+        SELECT zip, city, state
+          FROM zipcode
+         WHERE state = 'CT';
+     CURSOR c_student IS
+        SELECT first_name, last_name
+          FROM student
+         WHERE zip = v_zip;
+  BEGIN
+     FOR r_zip IN c_zip
+     LOOP
+        v_student_flag := 'N';
+        v_zip := r_zip.zip;
+        DBMS_OUTPUT.PUT_LINE(CHR(10));
+        DBMS_OUTPUT.PUT_LINE('Students living in '||
+           r_zip.city);
+        FOR r_student in c_student
+        LOOP
+           DBMS_OUTPUT.PUT_LINE(
+              r_student.first_name||
+              ' '||r_student.last_name);
+           v_student_flag := 'Y';
+        END LOOP;
+        IF v_student_flag = 'N'
+           THEN
+           DBMS_OUTPUT.PUT_LINE
+              ('No Students for this zipcode');
+        END IF;
+     END LOOP;
+END;
+/
+
+-- ch11_09a.sql
+SET SERVEROUTPUT ON
+DECLARE
+   v_sid student.student_id%TYPE;
+   CURSOR c_student IS
+      SELECT student_id, first_name, last_name
+        FROM student
+       WHERE student_id < 110;
+   CURSOR c_course IS
+      SELECT c.course_no, c.description
+        FROM course c, section s, enrollment e
+       WHERE c.course_no = s.course_no
+         AND s.section_id = e.section_id
+         AND e.student_id = v_sid;
+BEGIN
+   FOR r_student IN c_student 
+   LOOP
+      v_sid := r_student.student_id;
+      DBMS_OUTPUT.PUT_LINE(chr(10));
+      DBMS_OUTPUT.PUT_LINE(' The Student '||
+         r_student.student_id||' '||
+         r_student.first_name||' '||
+         r_student.last_name);
+      DBMS_OUTPUT.PUT_LINE(' is enrolled in the '||
+         'following courses: ');
+      FOR r_course IN c_course
+      LOOP
+         DBMS_OUTPUT.PUT_LINE(r_course.course_no||
+            '   '||r_course.description);
+      END LOOP;
+   END LOOP;
+END;
+/
+
+-- ch11_10a.sql
+SET SERVEROUTPUT ON
+DECLARE
+   v_amount course.cost%TYPE;
+   v_instructor_id  instructor.instructor_id%TYPE;
+   CURSOR c_inst IS
+      SELECT first_name, last_name, instructor_id
+        FROM instructor;
+   CURSOR c_cost IS
+      SELECT c.cost
+        FROM course c, section s, enrollment e
+       WHERE s.instructor_id = v_instructor_id
+         AND c.course_no = s.course_no
+         AND s.section_id = e.section_id;
+BEGIN
+   FOR r_inst IN c_inst
+   LOOP
+       v_instructor_id := r_inst.instructor_id;
+       v_amount := 0;
+       DBMS_OUTPUT.PUT_LINE(
+          'Amount generated by instructor '||
+          r_inst.first_name||' '||r_inst.last_name
+          ||' is');
+       FOR r_cost IN c_cost
+       LOOP
+          v_amount := v_amount + NVL(r_cost.cost, 0);
+       END LOOP;
+       DBMS_OUTPUT.PUT_LINE
+       ('     '||TO_CHAR(v_amount,'$999,999'));
+   END LOOP;
+END;
+/
+
+

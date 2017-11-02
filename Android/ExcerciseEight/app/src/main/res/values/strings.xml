@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ExcerciseEight</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_semester_two">SemesterTwo</string>
+    <string-array name="firstcourses">
+        <item>COMP 100001</item>
+        <item>CO910</item>
+        <item>CO710</item>
+        <item>LL044</item>
+        <item>Math 10042</item>
+    </string-array>
+</resources>
